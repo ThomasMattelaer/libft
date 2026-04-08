@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmattela <tmattela@student.42belgium.com>  #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-04-08 07:46:16 by tmattela          #+#    #+#             */
-/*   Updated: 2026-04-08 07:46:16 by tmattela         ###   ########.fr       */
+/*   Created: 2026-04-08 10:44:03 by tmattela          #+#    #+#             */
+/*   Updated: 2026-04-08 10:44:03 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memchr(const void *src, int c, size_t n)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	unsigned char	*s;
-	size_t			i;
+	void	*ptr;
 
-	s = (unsigned char *)src;
-	i = 0;
-	while (i < n)
-	{
-		if (s[i] == c)
-			return (&s[i]);
-		i++;
-	}
-	return (NULL);
+	if (nitems == 0 || size == 0)
+		return (malloc(0));
+	ptr = malloc(nitems * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nitems * size);
+	return (ptr);
 }

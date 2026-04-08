@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmattela <tmattela@student.42belgium.com>  #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-04-08 07:46:16 by tmattela          #+#    #+#             */
-/*   Updated: 2026-04-08 07:46:16 by tmattela         ###   ########.fr       */
+/*   Created: 2026-04-08 14:01:38 by tmattela          #+#    #+#             */
+/*   Updated: 2026-04-08 14:01:38 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memchr(const void *src, int c, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned char	*s;
-	size_t			i;
+	size_t	i;
+	size_t	j;
+	char	*strim;
 
-	s = (unsigned char *)src;
-	i = 0;
-	while (i < n)
-	{
-		if (s[i] == c)
-			return (&s[i]);
-		i++;
-	}
-	return (NULL);
+	if (!s1 || !set)
+		return (NULL);
+	strim = malloc(sizeof(char) * (ft_strlen(s1) - ft_strlen(set) + 1));
+	if (!strim)
+		return (NULL);
+	ft_strnstr(s1, set, ft_strlen(set));
+	
 }
