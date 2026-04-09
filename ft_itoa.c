@@ -45,8 +45,11 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	i = len - 1;
-	if (n < 0)
+	if (nb < 0)
+	{
 		str[0] = '-';
+		nb *= -1;
+	}
 	str[len] = 0;
 	while(nb != 0)
 	{
@@ -54,4 +57,5 @@ char	*ft_itoa(int n)
 		nb /= 10;
 		i--;
 	}
+	return (str);
 }
