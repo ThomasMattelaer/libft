@@ -21,19 +21,19 @@ int	count_words(char *str, char c)
 	count = 0;
 	while(str[i])
 	{
-		if(str[i] == c || (str[i] != c && i == 0))
+		if((str[i] != c && i == 0) || (str[i] != c && str[i - 1] == c))
 			count++;
 		i++;
 	}
 	return (count);
 }
 
-void	write_split(char **tab, char *str, char c)
+int	write_split(char **tab, char *str, char c)
 {
 	int	i;
 	int	j;
-	int	word;
 
+	i = 0;
 	while(str[i])
 	{
 		if(str[i] == c)
@@ -43,22 +43,25 @@ void	write_split(char **tab, char *str, char c)
 			j = 0;
 			while(str[i + j] != c && str[i + j])
 				j++;
-			tab[word] = malloc(sizeof(char) * (j + 1));
-			if (!tab[word])
-				return (NULL);
+			*tab = malloc(sizeof(char) * (j + 1));
+			if (!*tab)
+				return (0);
 			j = 0;
 			while(str[i] != c && str[i])
-				tab[word][j++] = str[i++];
-			tab[word][j] = '\0';
-			word++;
+				(*tab)[j++] = str[i++];
+			(*tab)[j] = '\0';
+			tab++;
 		}
 	}
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		words;
+	int		success;
+	char	**start;
 
 	if(!s || !c)
 		return (NULL);
@@ -67,6 +70,17 @@ char	**ft_split(char const *s, char c)
 	if(!tab)
 		return (NULL);
 	tab[words] = 0;
-	write_split(tab, s, c);
+	success = write_split(tab, s, c);
+	if(success == 0)
+	{
+		start = tab;
+		while(*tab)
+		{
+			free((*tab));
+			tab++;
+		}
+		free(start);
+		return (NULL);
+	}
 	return (tab);
 }
