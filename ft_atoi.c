@@ -9,21 +9,19 @@
 /*   Updated: 2026-04-08 10:17:53 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
+#include <limits.h>
 
 int	ft_atoi(const char *nptr)
 {
 	size_t	i;
-	int		nb;
+	long	nb;
 	int		minus;
-	char	*str;
 
 	i = 0;
 	nb = 0;
 	minus = 1;
-	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
-		|| nptr[i] == '\r' || nptr[i] == '\v' || nptr[i] == '\f')
+	while (nptr[i] == ' ' || nptr[i] >= 9 && nptr[i] <= 13)
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
@@ -33,6 +31,10 @@ int	ft_atoi(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
+		if (nb > (nb * 10) + (nptr[i] - '0') && minus == 1)
+			return ((int)LONG_MAX);
+		if (nb > (nb * 10) + (nptr[i] - '0') && minus == -1)
+			return ((int)LONG_MIN);
 		nb = (nb * 10) + (nptr[i] - '0');
 		i++;
 	}
