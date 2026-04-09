@@ -65,12 +65,12 @@ char	**ft_split(char const *s, char c)
 
 	if(!s || !c)
 		return (NULL);
-	words = count_words(s, c);
+	words = count_words((char *)s, c);
 	tab = (char **)malloc(sizeof(char *) * (words + 1));
 	if(!tab)
 		return (NULL);
 	tab[words] = 0;
-	success = write_split(tab, s, c);
+	success = write_split(tab, (char *)s, c);
 	if(success == 0)
 	{
 		start = tab;
