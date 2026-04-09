@@ -38,5 +38,5 @@ int	ft_atoi(const char *nptr)
 		nb = (nb * 10) + (nptr[i] - '0');
 		i++;
 	}
-	return (nb * minus);
+	return ((int)(nb * minus));
 }
