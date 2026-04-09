@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-static int int_len(long nb)
+static	int	int_len(long nb)
 {
 	int	count;
 
 	count = 0;
-	if(nb < 0)
+	if (nb < 0)
 	{
 		count++;
 		nb *= -1;
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 		nb *= -1;
 	}
 	str[len] = 0;
-	while(nb != 0)
+	while (nb != 0)
 	{
 		str[i] = (nb % 10) + '0';
 		nb /= 10;
