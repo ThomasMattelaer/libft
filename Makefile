@@ -1,7 +1,6 @@
 NAME := libft.a
 
 INCLUDE_DIR := ./includes
-SRC_DIR := ./srcs
 
 SRCS := ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -13,16 +12,17 @@ SRCS := ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
 		ft_lstiter.c ft_lstmap.c
 
-OBJ := $(SRCS:%.c=%.o)
+OBJ := $(SRCS:.c=.o)
 
 CFLAGS := -Wall -Wextra -Werror
 
-$(OBJ): %.o: $(SRC_DIR)/%.c
+all: $(NAME)
+
+$(OBJ): %.o: %.c
 	gcc $(CFLAGS) -I $(INCLUDE_DIR) -c $< -o $@
 
 $(NAME): $(OBJ)
-	ar rcs $@ $^;
-all: $(NAME)
+	ar rcs $@ $^
 
 clean:
 	rm -f $(OBJ)
