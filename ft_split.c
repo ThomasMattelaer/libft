@@ -6,7 +6,7 @@
 /*   By: tmattela <tmattela@student.42belgium.com>  #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026-04-08 14:32:53 by tmattela          #+#    #+#             */
-/*   Updated: 2026-04-08 14:32:53 by tmattela         ###   ########.fr       */
+/*   Updated: 2026/04/14 18:09:22 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ char	**ft_split(char const *s, char c)
 	int		success;
 	char	**start;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
 	words = count_words((char *)s, c);
 	tab = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!tab)
 		return (NULL);
-	tab[words] = 0;
+	tab[words] = NULL;
 	success = write_split(tab, (char *)s, c);
 	if (success == 0)
 	{
@@ -83,4 +83,18 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	}
 	return (tab);
+}
+#include <stdio.h>
+int main()
+{
+	char **feur;
+	feur = ft_split("^^^^^^^^^^^^^^^^", '^');
+	int i = 0;
+	while (feur[i])
+	{
+		printf("%i: %s\n", i, feur[i]);
+		free(feur[i++]);
+	}
+	printf("%i: %s\n", i, feur[i]);
+	free(feur);
 }
