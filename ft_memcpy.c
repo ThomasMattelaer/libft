@@ -18,15 +18,16 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*d;
 	const unsigned char	*s;
 
+	if (!dst && !src)
+		return (NULL);
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
 	i = 0;
 	if (n == 0)
 		return (dst);
-	while (n > 0)
+	while (i < n)
 	{
 		d[i] = s[i];
-		n--;
 		i++;
 	}
 	return (dst);
