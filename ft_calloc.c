@@ -24,3 +24,38 @@ void	*ft_calloc(size_t nitems, size_t size)
 	ft_bzero(ptr, nitems * size);
 	return (ptr);
 }
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	size_t	n = 0;
+// 	size_t	size = 1;
+// 	int		i = 0;
+
+// 	while (i < 5)
+// 	{
+// 		printf("test %d (n=%zu, size=%zu)\n", i, n, size);
+
+// 		char *p1 = ft_calloc(n, size);
+// 		char *p2 = calloc(n, size);
+
+// 		printf("ft_calloc : ");
+// 		for (size_t j = 0; j < n * size; j++)
+// 			printf("%d ", p1 ? p1[j] : -1);
+// 		printf("\n");
+
+// 		printf("calloc    : ");
+// 		for (size_t j = 0; j < n * size; j++)
+// 			printf("%d ", p2 ? p2[j] : -1);
+// 		printf("\n");
+
+// 		printf("----\n");
+
+// 		free(p1);
+// 		free(p2);
+
+// 		n++;
+// 		i++;
+// 	}
+// 	return (0);
+// }

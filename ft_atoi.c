@@ -40,3 +40,36 @@ int	ft_atoi(const char *nptr)
 	}
 	return ((int)(nb * minus));
 }
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char	*tests[] = {
+// 		"42",
+// 		"   42",
+// 		"   -42",
+// 		"+42",
+// 		"--42",
+// 		"++42",
+// 		"  +--+1234ab567",
+// 		"2147483647",
+// 		"-2147483648",
+// 		"2147483648",
+// 		"-2147483649",
+// 		"abc",
+// 		"9999999999999999999",
+// 		"",
+// 		NULL
+// 	};
+// 	int	i = 0;
+
+// 	while (tests[i])
+// 	{
+// 		printf("input: \"%s\"\n", tests[i]);
+// 		printf("atoi: %d\n", atoi(tests[i]));
+// 		printf("ft_atoi: %d\n", ft_atoi(tests[i]));
+// 		printf("----\n");
+// 		i++;
+// 	}
+// 	return (0);
+// }

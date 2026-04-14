@@ -60,3 +60,29 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int	tests[] = {0, 1, -1, 42, -42, 2147483647, -2147483648, 9999999};
+// 	int	i = 0;
+
+// 	while (i < 8)
+// 	{
+// 		int n = tests[i];
+// 		char *s1 = ft_itoa(n);
+// 		char *s2 = malloc(50);
+
+// 		sprintf(s2, "%d", n);
+// 		printf("n = %d\n", n);
+// 		printf("ft_itoa : %s\n", s1);
+// 		printf("itoa    : %s\n", s2);
+// 		printf("----\n");
+
+// 		free(s1);
+// 		free(s2);
+
+// 		i++;
+// 	}
+// 	return (0);
+// }
