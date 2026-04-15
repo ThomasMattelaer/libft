@@ -26,3 +26,14 @@ void	*ft_memchr(const void *src, int c, size_t n)
 	}
 	return (NULL);
 }
+// #include <stdio.h>
+// #include <string.h>
+// int main ()
+// {
+//    const char str[] = "Tutorialspoint";
+//    const char ch = 'a';
+//    char *ret;
+//    ret = memchr(str, ch, strlen(str));
+//    printf("String after |%c| is - |%s|\n", ch, ret);
+//    return(0);
+// }

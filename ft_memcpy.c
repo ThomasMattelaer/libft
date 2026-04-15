@@ -32,3 +32,21 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+// #include <stdio.h>
+// #include <string.h>
+
+// int main() {
+
+//     // Initialize a variable
+//     int a = 20;
+//     int b = 10;
+
+//     printf("Value of b before calling ft_memcpy: %d\n", b);
+
+//     // Use memcpy to copy the value of 'a' into 'b'
+//     ft_memcpy(&b, &a, sizeof(int));
+
+//     printf("Value of b after calling ft_memcpy: %d\n", b);
+
+//     return 0;
+// }

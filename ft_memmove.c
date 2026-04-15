@@ -48,7 +48,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 //     puts(str1);
 
 //     /* Copies contents of str2 to sr1 */
-//     memmove(str1, str2, sizeof(str2));
+//     ft_memmove(str1, str2, sizeof(str2));
 
 //     puts("\nstr1 after memmove ");
 //     puts(str1);

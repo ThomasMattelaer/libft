@@ -26,3 +26,22 @@ int	ft_memcmp(const void *src1, const void *src2, size_t n)
 		return (0);
 	return ((int)(s1[i] - s2[i]));
 }
+// #include <stdio.h>
+// #include <string.h>
+
+// int main() {
+//     int res = 0;
+//     char s1[10] = "geeks";
+//     char s2[10] = "greeks";
+
+//     res = ft_memcmp(s1, s2, strlen(s1));
+
+//     if (res > 0)
+//         printf("s1 is greater");
+//     else if (res < 0)
+//         printf("s2 is greater");
+//     else
+//         printf("both are equal");
+
+//     return 0;
+// }
