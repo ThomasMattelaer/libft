@@ -14,6 +14,8 @@ OBJ := $(SRCS:.c=.o)
 
 CFLAGS := -Wall -Wextra -Werror
 
+bonus: all
+
 all: $(NAME)
 
 $(OBJ): %.o: %.c
