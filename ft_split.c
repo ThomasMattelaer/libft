@@ -84,17 +84,17 @@ char	**ft_split(char const *s, char c)
 	}
 	return (tab);
 }
-#include <stdio.h>
-int main()
-{
-	char **feur;
-	feur = ft_split("^^^^^^^^^^^^^^^^", '^');
-	int i = 0;
-	while (feur[i])
-	{
-		printf("%i: %s\n", i, feur[i]);
-		free(feur[i++]);
-	}
-	printf("%i: %s\n", i, feur[i]);
-	free(feur);
-}
+// #include <stdio.h>
+// int main()
+// {
+// 	char **feur;
+// 	feur = ft_split("aaa\0bbbb", '\0');
+// 	int i = 0;
+// 	while (feur[i])
+// 	{
+// 		printf("%i: %s\n", i, feur[i]);
+// 		free(feur[i++]);
+// 	}
+// 	printf("%i: %s\n", i, feur[i]);
+// 	free(feur);
+// }
