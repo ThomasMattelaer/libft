@@ -42,7 +42,7 @@ make re
 
 
 #### AI Usage:
-The LLM that has been used for this project is Claude. Claude was used throughout this project as a learning tool, in the spirit of the 42 pedagogy. It was never used to generate final coded solutions, but exclusively to understand concepts, clarify behavior and visualize data structures.
+The LLM that has been used for this project is Claude. Claude was used throughout this project as a learning tool, in the spirit of the 42 pedagogy. It was never used to generate final coded solutions, but exclusively to understand concepts, clarify behavior, visualize data structures and upgrade testing/main.
 
 ## Detailed description
 

@@ -9,7 +9,6 @@
 /*   Updated: 2026-04-10 09:10:56 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
@@ -18,17 +17,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	if (*lst)
-	{
-		current = *lst;
-		while (current->next != NULL)
-			current = current->next;
-		current->next = new;
-	}
-	else
+	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
-	new->next = NULL;
+	current = ft_lstlast(*lst);
+	current->next = new;
 }
