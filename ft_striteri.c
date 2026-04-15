@@ -25,3 +25,26 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
+// #include <stdio.h>
+// void	to_upper(unsigned int i, char *c)
+// {
+// 	(void)i;
+// 	if (*c >= 'a' && *c <= 'z')
+// 		*c -= 32;
+// }
+// int	main(void)
+// {
+// 	char s1[] = "hello";
+// 	ft_striteri(s1, to_upper);
+// 	printf("T1 upper               : ft='%s' | expected='HELLO'\n", s1);
+
+// 	char s3[] = "";
+// 	ft_striteri(s3, to_upper);
+// 	printf("T3 empty string        : ft='%s' | expected=''\n", s3);
+
+// 	char s4[] = "42!";
+// 	ft_striteri(s4, to_upper);
+// 	printf("T4 non alpha           : ft='%s' | expected='42!'\n", s4);
+
+// 	return (0);
+// }

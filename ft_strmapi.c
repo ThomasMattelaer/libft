@@ -31,3 +31,39 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	res[i] = 0;
 	return (res);
 }
+// static char to_upper(unsigned int i, char c)
+// {
+//     (void)i;
+//     return (c >= 'a' && c <= 'z') ? c - 32 : c;
+// }
+// #include <stdio.h>
+// int main(void)
+// {
+//     char *r;
+
+//     r = ft_strmapi("hello", to_upper);
+//     printf("T1    : ft='%s' | expected='HELLO'\n", r);
+//     free(r);
+
+//     r = ft_strmapi("12345", to_upper);
+//     printf("T2  digits unchanged        : ft='%s' |
+// expected='12345'\n", r);
+//     free(r);
+
+//     r = ft_strmapi(NULL, to_upper);
+//     printf("T3  NULL s                  : ft='%s' |
+// expected='NULL'\n", r ? r : "NULL");
+
+//     r = ft_strmapi("hello", NULL);
+//     printf("T4  NULL f     : ft='%s' | expected='NULL'\n", r ? r : "NULL");
+
+//     r = ft_strmapi("HELLO", to_upper);
+//     printf("T5  already upper           : ft='%s' | expected='HELLO'\n", r);
+//     free(r);
+
+//     r = ft_strmapi("a", to_upper);
+//     printf("T6  single char             : ft='%s' | expected='A'\n", r);
+//     free(r);
+
+//     return (0);
+// }

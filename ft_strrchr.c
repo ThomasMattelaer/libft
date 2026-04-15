@@ -24,3 +24,20 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+// #include <stdio.h>
+// #include <string.h>
+
+// int main(void)
+// {
+// 	printf("T1 nul mid		: ft=%s\n",
+// 	ft_strrchr("ab\0cd", 'c'));
+
+// 	printf("T2 s empty		: ft=%s\n",
+// 	ft_strrchr("", 'c'));
+
+// 	printf("T3 c backslash 0		: ft=%s\n",
+// 	ft_strrchr("test 42", '\0'));
+
+// 	printf("T4 casual behavior: ft=%s\n",
+// 	ft_strrchr("test 42 le boss", 'e'));
+// }
